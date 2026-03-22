@@ -1,0 +1,37 @@
+
+> nextn@0.1.0 build
+> next build
+
+   ▲ Next.js 15.3.4
+   - Environments: .env.local
+   - Experiments (use with caution):
+     ✓ optimizeCss
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 56s
+   Skipping validation of types
+   Skipping linting
+   Collecting page data ...
+   Generating static pages (0/35) ...
+Error occurred prerendering page "/404". Read more: https://nextjs.org/docs/messages/prerender-error
+Error: Cannot find module 'critters'
+Require stack:
+- /home/influnex/Documents/iptv_project/node_modules/next/dist/compiled/next-server/pages.runtime.prod.js
+- /home/influnex/Documents/iptv_project/.next/server/pages/_document.js
+- /home/influnex/Documents/iptv_project/node_modules/next/dist/server/require.js
+- /home/influnex/Documents/iptv_project/node_modules/next/dist/server/load-components.js
+- /home/influnex/Documents/iptv_project/node_modules/next/dist/build/utils.js
+- /home/influnex/Documents/iptv_project/node_modules/next/dist/build/worker.js
+- /home/influnex/Documents/iptv_project/node_modules/next/dist/compiled/jest-worker/processChild.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1212:15)
+    at /home/influnex/Documents/iptv_project/node_modules/next/dist/server/require-hook.js:55:36
+    at Module._load (node:internal/modules/cjs/loader:1043:27)
+    at Module.require (node:internal/modules/cjs/loader:1298:19)
+    at mod.require (/home/influnex/Documents/iptv_project/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:182:18)
+    at Object.critters (/home/influnex/Documents/iptv_project/node_modules/next/dist/compiled/next-server/pages.runtime.prod.js:14:17567)
+    at r (/home/influnex/Documents/iptv_project/node_modules/next/dist/compiled/next-server/pages.runtime.prod.js:14:18154)
+    at /home/influnex/Documents/iptv_project/node_modules/next/dist/compiled/next-server/pages.runtime.prod.js:14:14275
+    at o (/home/influnex/Documents/iptv_project/node_modules/next/dist/compiled/next-server/pages.runtime.prod.js:14:14570)
+Export encountered an error on /_error: /404, exiting the build.
+ ⨯ Next.js build worker exited with code: 1 and signal: null

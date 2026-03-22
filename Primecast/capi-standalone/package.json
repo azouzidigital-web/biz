@@ -1,0 +1,23 @@
+{
+  "name": "facebook-capi-standalone",
+  "version": "1.0.0",
+  "description": "Standalone Facebook Conversions API implementation",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8080",
+    "dev": "python -m http.server 8080"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "facebook",
+    "conversions-api",
+    "capi",
+    "tracking",
+    "analytics"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}

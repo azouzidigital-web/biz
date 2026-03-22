@@ -1,0 +1,19 @@
+<!-- This file is used by Netlify to detect the form structure during build time -->
+<!-- It's hidden from users and is only for Netlify bot detection -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hidden Netlify form</title>
+</head>
+<body>
+  <!-- This pre-renders the form for Netlify to detect during build -->
+  <form name="subscription" action="/success" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <input type="text" name="plan" />
+    <input type="hidden" name="form-name" value="subscription" />
+  </form>
+</body>
+</html>

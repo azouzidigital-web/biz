@@ -1,0 +1,55 @@
+User-agent: *
+Allow: /
+Disallow: /subscribe
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /private/
+
+# Block aggressive scrapers
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+# Allow good bots
+User-agent: Googlebot
+Allow: /
+Disallow: /subscribe
+
+User-agent: Bingbot
+Allow: /
+Disallow: /subscribe
+
+# Static sitemaps (primary - Google prefers these)
+Sitemap: https://primecastiptv.site/sitemap.xml
+Sitemap: https://primecastiptv.site/sitemap-index.xml
+
+# Dynamic sitemaps (backup)
+Sitemap: https://primecastiptv.site/blog/rss.xml
+
+# Crawl delay for respectful crawling
+Crawl-delay: 1
+
+# Allow all major search engines with specific rules
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot  
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2

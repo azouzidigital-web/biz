@@ -1,0 +1,157 @@
+# Creating Fixed Floating Elements in Veltrix IPTV
+
+This guide explains how to properly implement fixed floating elements (like buttons, menus, etc.) that remain in a specific position on the screen even when scrolling.
+
+## Why We Need a Special Approach
+
+In our project, we encountered an issue with fixed positioning due to CSS transforms applied to root-level elements. When an element has a CSS transform property (like `transform: translateZ(0)` which we were using for performance optimization), it creates a new "containing block" for fixed-position elements, causing them to position relative to that transformed element instead of the viewport.
+
+## Solution: Using React Portals
+
+To solve this issue, we've created a reusable component that uses React's Portal API to render fixed elements directly into the document body, bypassing any transform-related stacking context issues.
+
+## How to Use Fixed Elements
+
+### 1. Using the FixedButton Component
+
+For buttons that need fixed positioning, use the `FixedButton` component:
+
+```jsx
+import { FixedButton } from '@/components/ui/fixed-button';
+import { ArrowUp } from 'lucide-react'; // or any icon
+
+// Inside your component:
+<FixedButton 
+  onClick={handleSomeAction}
+  bottom={20} // Distance from bottom in pixels
+  right={20}  // Distance from right in pixels
+  variant="default" // Any button variant
+>
+  <ArrowUp className="h-5 w-5" />
+</FixedButton>
+```
+
+Configuration options:
+- `bottom`: Distance from bottom of viewport in pixels
+- `right`: Distance from right of viewport in pixels
+- `left`: Distance from left of viewport in pixels
+- `top`: Distance from top of viewport in pixels
+- All standard Button props are also supported
+
+### 2. Creating Other Fixed Elements
+
+For other fixed elements (not buttons), create a similar portal-based component:
+
+```jsx
+"use client";
+
+import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
+
+export function FixedElement({ 
+  children, 
+  className,
+  style = {},
+  ...props 
+}) {
+  const [mounted, setMounted] = useState(false);
+  
+  useEffect(() => {
+    setMounted(true);
+    return () => setMounted(false);
+  }, []);
+  
+  if (!mounted) return null;
+  
+  return createPortal(
+    <div 
+      className={className}
+      style={{
+        position: 'fixed',
+        zIndex: 100,
+        ...style
+      }}
+      {...props}
+    >
+      {children}
+    </div>,
+    document.body
+  );
+}
+```
+
+Then use it like:
+
+```jsx
+<FixedElement 
+  style={{ bottom: '20px', right: '20px' }}
+  className="bg-white p-4 rounded-lg shadow-lg"
+>
+  Your content here
+</FixedElement>
+```
+
+### 3. Example: Scroll to Top Button
+
+We've included a `ScrollToTopButton` component as an example:
+
+```jsx
+import { FixedButton } from '@/components/ui/fixed-button';
+import { ArrowUp } from 'lucide-react';
+
+export function ScrollToTopButton() {
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  return (
+    <FixedButton 
+      onClick={handleScrollToTop}
+      size="icon"
+      bottom={20}
+      right={20}
+      aria-label="Scroll to top"
+    >
+      <ArrowUp className="h-5 w-5" />
+    </FixedButton>
+  );
+}
+```
+
+## Important Notes
+
+1. Always use the Portal-based approach for fixed elements in this project
+2. Don't add fixed positioning directly with CSS classes like `fixed bottom-4 right-4`
+3. If you need to create a new type of fixed element, follow the pattern in `fixed-button.tsx`
+4. Make sure to use appropriate z-index values if you have multiple fixed elements
+
+## Troubleshooting
+
+If fixed positioning still doesn't work:
+
+1. Check if any new parent elements have transform properties
+2. Verify z-index values are high enough (our components use 100 by default)
+3. Test on multiple browsers and devices, especially iOS Safari
+4. Check for overflow issues in parent containers
+
+## Technical Details
+
+The issue was caused by the following CSS in globals.css that we've since modified:
+
+```css
+:root {
+  --vh: 1vh;
+  transform: translateZ(0); /* This was causing the issue */
+}
+
+.min-h-screen {
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+  transform: translateZ(0); /* This was causing the issue */
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+```
+
+For more information on this CSS behavior, see:
+https://developer.mozilla.org/en-US/docs/Web/CSS/position#fixed_positioning
