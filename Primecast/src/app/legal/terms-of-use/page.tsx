@@ -26,9 +26,9 @@ export default function TermsOfUse() {
               <h2 className="text-xl font-semibold text-foreground mb-3">2. Service Description</h2>
               <p>Veltrix provides:</p>
               <ul className="list-disc pl-6 mt-2 space-y-2">
-                <li>IPTV streaming services</li>
-                <li>Access to various channels and content</li>
-                <li>Multiple device support</li>
+                <li>Digital ebooks available for one-time purchase</li>
+                <li>Instant download access upon completed payment</li>
+                <li>Business, strategy, and leadership ebook titles</li>
                 <li>Customer support services</li>
               </ul>
             </section>
@@ -37,21 +37,21 @@ export default function TermsOfUse() {
               <h2 className="text-xl font-semibold text-foreground mb-3">3. User Responsibilities</h2>
               <p>Users must:</p>
               <ul className="list-disc pl-6 mt-2 space-y-2">
-                <li>Provide accurate account information</li>
-                <li>Maintain password security</li>
-                <li>Use the service for personal, non-commercial purposes only</li>
+                <li>Provide accurate contact and payment information</li>
+                <li>Use purchased ebooks for personal, non-commercial purposes only</li>
                 <li>Comply with applicable laws and regulations</li>
-                <li>Not share or resell account access</li>
+                <li>Not share, redistribute, or resell purchased ebook files</li>
               </ul>
             </section>
 
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">4. Subscription and Billing</h2>
+              <h2 className="text-xl font-semibold text-foreground mb-3">4. Purchase and Payment</h2>
               <ul className="list-disc pl-6 mt-2 space-y-2">
-                <li>Subscription fees are billed in advance</li>
-                <li>Prices may change with notice</li>
-                <li>Cancellation process follows our refund policy</li>
-                <li>Payment information must be kept current</li>
+                <li>All purchases are one-time payments — there are no recurring charges or subscriptions</li>
+                <li>Payment is processed securely at the time of purchase</li>
+                <li>Prices are subject to change without prior notice</li>
+                <li>Upon successful payment, you will receive immediate access to download your ebook</li>
+                <li>All sales are final — no refunds are offered for digital products. See our <Link href="/legal/refund-policy" className="text-primary underline">Refund Policy</Link> for details</li>
               </ul>
             </section>
 
@@ -59,16 +59,15 @@ export default function TermsOfUse() {
               <h2 className="text-xl font-semibold text-foreground mb-3">5. Content Usage</h2>
               <p>Users agree to:</p>
               <ul className="list-disc pl-6 mt-2 space-y-2">
-                <li>Not record, copy, or redistribute content</li>
-                <li>Not use VPNs or proxies to circumvent geographical restrictions</li>
-                <li>Not attempt to hack or modify the service</li>
+                <li>Not copy or redistribute ebooks without permission</li>
                 <li>Respect intellectual property rights</li>
+                <li>Not attempt to hack or modify the service</li>
               </ul>
             </section>
 
             <section>
               <h2 className="text-xl font-semibold text-foreground mb-3">6. Service Availability</h2>
-              <p>PrimeCast:</p>
+              <p>Veltrix:</p>
               <ul className="list-disc pl-6 mt-2 space-y-2">
                 <li>Strives for 99.9% uptime but doesn't guarantee uninterrupted service</li>
                 <li>May perform maintenance with notice</li>
@@ -78,13 +77,12 @@ export default function TermsOfUse() {
             </section>
 
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">7. Account Termination</h2>
-              <p>Veltrix may terminate accounts for:</p>
+              <h2 className="text-xl font-semibold text-foreground mb-3">7. Access Revocation</h2>
+              <p>Veltrix reserves the right to revoke access to purchased content in cases of:</p>
               <ul className="list-disc pl-6 mt-2 space-y-2">
                 <li>Terms of Use violations</li>
-                <li>Fraudulent activity</li>
-                <li>Non-payment</li>
-                <li>Sharing account credentials</li>
+                <li>Fraudulent or disputed payment activity</li>
+                <li>Unauthorized redistribution of purchased ebook files</li>
               </ul>
             </section>
 

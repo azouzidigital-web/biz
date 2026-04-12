@@ -207,23 +207,6 @@ html {
   min-width: 0;
 }
 
-/* Channel carousel specific optimizations */
-.channel-carousel-container {
-  contain: layout style paint;
-}
-
-.channel-carousel-item {
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  will-change: transform;
-}
-
-.channel-carousel-image {
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  will-change: opacity;
-}
-
 /* Responsive pricing cards for all screen sizes */
 @media (max-width: 768px) {
   .pricing-card {
@@ -449,23 +432,6 @@ html {
 .embla__slide {
   flex: 0 0 auto;
   min-width: 0;
-}
-
-/* Channel carousel specific optimizations */
-.channel-carousel-container {
-  contain: layout style paint;
-}
-
-.channel-carousel-item {
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  will-change: transform;
-}
-
-.channel-carousel-image {
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  will-change: opacity;
 }
 
 /* Prevent flash of unstyled content in carousel */

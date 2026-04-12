@@ -1,6 +1,6 @@
 # Free Bot Protection Services Integration Guide
 
-This guide shows you how to integrate the best free bot protection services with your IPTV site.
+This guide shows you how to integrate the best free bot protection services with your ebook site.
 
 ## 🚀 Quick Start
 

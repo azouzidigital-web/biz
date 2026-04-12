@@ -1,4 +1,4 @@
-# Creating Fixed Floating Elements in Veltrix IPTV
+# Creating Fixed Floating Elements in Veltrix Ebooks
 
 This guide explains how to properly implement fixed floating elements (like buttons, menus, etc.) that remain in a specific position on the screen even when scrolling.
 

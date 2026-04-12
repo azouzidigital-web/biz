@@ -32,11 +32,11 @@ Allow: /
 Disallow: /subscribe
 
 # Static sitemaps (primary - Google prefers these)
-Sitemap: https://primecastiptv.site/sitemap.xml
-Sitemap: https://primecastiptv.site/sitemap-index.xml
+Sitemap: https://veltrixbooks.com/sitemap.xml
+Sitemap: https://veltrixbooks.com/sitemap-index.xml
 
 # Dynamic sitemaps (backup)
-Sitemap: https://primecastiptv.site/blog/rss.xml
+Sitemap: https://veltrixbooks.com/blog/rss.xml
 
 # Crawl delay for respectful crawling
 Crawl-delay: 1

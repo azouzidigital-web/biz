@@ -33,10 +33,10 @@ export default function PrivacyPolicy() {
               <h2 className="text-xl font-semibold text-foreground mb-3">2. How We Use Your Information</h2>
               <p>We use your information to:</p>
               <ul className="list-disc pl-6 mt-2 space-y-2">
-                <li>Provide and improve our IPTV services</li>
+                <li>Provide and improve our ebook services</li>
                 <li>Process payments and manage subscriptions</li>
                 <li>Send service updates and notifications</li>
-                <li>Personalize your viewing experience</li>
+                <li>Personalize your reading experience</li>
                 <li>Ensure security and prevent fraud</li>
               </ul>
             </section>

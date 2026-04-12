@@ -1,6 +1,6 @@
 "use client";
 
-// filepath: /home/influnex/Desktop/iptv/src/components/landing/hero-section.tsx
+// filepath: /home/influnex/Documents/Biz/G/Primecast/src/components/landing/hero-section.tsx
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useScreenSize } from "@/hooks/use-mobile";

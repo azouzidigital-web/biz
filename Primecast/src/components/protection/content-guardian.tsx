@@ -50,12 +50,12 @@ export const ContentGuardian = () => {
           if (!devtools.open) {
             devtools.open = true;
             // Could blur content or show warning
-            document.querySelector('.channels-container')?.classList.add('blur-sm');
+            document.body.classList.add('blur-sm');
           }
         } else {
           if (devtools.open) {
             devtools.open = false;
-            document.querySelector('.channels-container')?.classList.remove('blur-sm');
+            document.body.classList.remove('blur-sm');
           }
         }
       }, 500);
@@ -97,10 +97,9 @@ export const ContentGuardian = () => {
       if (focusChanges > 10) {
         console.warn('Rapid focus changes detected - possible screenshot attempt');
         // Could add temporary blur here
-        const container = document.querySelector('.channels-container');
-        container?.classList.add('blur-lg');
+        document.body.classList.add('blur-lg');
         setTimeout(() => {
-          container?.classList.remove('blur-lg');
+          document.body.classList.remove('blur-lg');
         }, 2000);
         focusChanges = 0;
       }

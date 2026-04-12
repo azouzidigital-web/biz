@@ -7,7 +7,7 @@ interface AntiCopyProtectionProps {
   domain?: string;
 }
 
-export function AntiCopyProtection({ children, domain = "IPTV-PRO.CA" }: AntiCopyProtectionProps) {
+export function AntiCopyProtection({ children, domain = "yourdomain.com" }: AntiCopyProtectionProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

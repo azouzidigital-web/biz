@@ -17,7 +17,7 @@
   - [ ] pages_read_engagement
 
 ### 3. **Domain Verification**
-- [ ] Domain `primecastt.site` is verified in Facebook Business Manager
+- [ ] Domain `veltrixbooks.com` is verified in Facebook Business Manager
 - [ ] SSL certificate is active and valid
 - [ ] Website is accessible via HTTPS
 
@@ -113,7 +113,7 @@ curl -X POST "https://graph.facebook.com/v19.0/4203576886543737/events" \
       "event_name": "PageView",
       "event_time": '$(date +%s)',
       "action_source": "website",
-      "event_source_url": "https://primecastt.site",
+      "event_source_url": "https://veltrixbooks.com",
       "user_data": {
         "client_ip_address": "192.168.1.1",
         "client_user_agent": "Mozilla/5.0 (compatible; Test/1.0)"

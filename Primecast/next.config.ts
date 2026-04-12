@@ -44,7 +44,7 @@ const nextConfig: NextConfig = bundleAnalyzer({
             value: 'primecast.netlify.app',
           },
         ],
-        destination: 'https://primecastt.site/:path*',
+        destination: 'https://veltrixbooks.com/:path*',
         permanent: true,
       },
     ];

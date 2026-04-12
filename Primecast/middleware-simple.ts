@@ -15,12 +15,12 @@ export function middleware(request: NextRequest) {
       <head>
         <title>Not Found</title>
         <meta name="robots" content="noindex, nofollow, nosnippet, noarchive">
-        <meta http-equiv="refresh" content="0;url=https://primecastt.site">
+        <meta http-equiv="refresh" content="0;url=https://veltrixbooks.com">
       </head>
       <body style="margin:0;padding:0;background:#fff;font-family:system-ui;text-align:center;padding-top:30vh;">
         <h1 style="color:#666;">404</h1>
         <p style="color:#666;">Page not found</p>
-        <script>window.location.replace('https://primecastt.site');</script>
+        <script>window.location.replace('https://veltrixbooks.com');</script>
       </body>
       </html>`,
       {

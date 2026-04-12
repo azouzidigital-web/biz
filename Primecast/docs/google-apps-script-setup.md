@@ -83,7 +83,7 @@ function doPost(e) {
     // Send email notification
     MailApp.sendEmail({
       to: "your-email@example.com",
-      subject: "New IPTV Subscription: " + data.plan,
+      subject: "New Ebook Subscription: " + data.plan,
       body: `New subscription received:
       
 Name: ${data.name}

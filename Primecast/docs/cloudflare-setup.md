@@ -1,10 +1,10 @@
 # Cloudflare Bot Protection Setup
 
-Cloudflare's free tier provides excellent bot protection for your IPTV site.
+Cloudflare's free tier provides excellent bot protection for your ebook site.
 
 ## Step 1: Setup Cloudflare
 1. Create account at https://cloudflare.com
-2. Add your domain (iptv-pro.ca)
+2. Add your domain (yourdomain.com)
 3. Update your domain's nameservers to Cloudflare's
 
 ## Step 2: Enable Bot Fight Mode (FREE)
