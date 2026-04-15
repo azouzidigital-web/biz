@@ -32,7 +32,7 @@ const faqCategories = [
       },
       {
         question: "How do I access my eBook after purchase?",
-        answer: "After purchasing, you'll receive instant access to download your eBook in PDF format via email. You can also access your purchased eBooks anytime from your account dashboard.",
+        answer: "After purchasing, you'll receive a secure storage link via email where you can download your eBook in PDF format. Simply click the link to access and download your file.",
       },
       {
         question: "Can I get a preview of the content before buying?",
@@ -108,7 +108,7 @@ const faqCategories = [
       },
       {
         question: "What is your refund policy?",
-        answer: "We offer a 14-day money-back guarantee on all eBook purchases. If you're not satisfied, contact our support team for a full refund. No questions asked.",
+        answer: "We do not offer refunds on eBook purchases. Please review the table of contents and sample chapters on the product page before purchasing to ensure the content meets your needs.",
       },
       {
         question: "Are there discounts available?",

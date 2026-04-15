@@ -24,7 +24,7 @@ const bestSellers: BestSeller[] = [
     price: 49,
     oldPrice: 99,
     rating: 4.9,
-    reviews: 214,
+    reviews: 267,
   },
   {
     id: "organizational-management",
@@ -34,7 +34,17 @@ const bestSellers: BestSeller[] = [
     price: 49,
     oldPrice: 99,
     rating: 4.8,
-    reviews: 187,
+    reviews: 298,
+  },
+  {
+    id: "business-development",
+    title: "Business Development Explained",
+    subtitle: "Strategies for sustainable growth and new revenue",
+    image: "/images/books/business-dev-1.webp",
+    price: 49,
+    oldPrice: 99,
+    rating: 4.9,
+    reviews: 367,
   },
 ];
 
@@ -65,7 +75,7 @@ export function PopularContentSection() {
         </div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto mb-10">
           {bestSellers.map((book) => {
             const discount = calculateDiscount(book.oldPrice, book.price);
             return (
@@ -140,6 +150,16 @@ export function PopularContentSection() {
           })}
         </div>
 
+        {/* View All CTA */}
+        <div className="text-center mb-14">
+          <Link
+            href="/books"
+            className="inline-flex items-center gap-2 px-8 py-3 rounded-xl border-2 border-primary text-primary font-bold text-sm hover:bg-primary hover:text-white transition-all duration-300"
+          >
+            Browse All Books →
+          </Link>
+        </div>
+
         {/* Trust Bar */}
         <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 text-sm text-muted-foreground">
           <span className="flex items-center gap-2">
@@ -152,7 +172,7 @@ export function PopularContentSection() {
           </span>
           <span className="flex items-center gap-2">
             <Star className="w-4 h-4 text-primary fill-primary" />
-            4.8+ average rating
+            Verified customer feedback
           </span>
         </div>
 

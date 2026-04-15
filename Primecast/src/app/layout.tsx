@@ -73,7 +73,7 @@ export default function RootLayout({
               "@type": "Organization",
               "name": "Veltrix",
               "url": "https://veltrixbooks.com",
-              "logo": "https://veltrixbooks.com/favicon-32x32.png",
+              "logo": "https://veltrixbooks.com/Header-logo.png",
               "sameAs": [
                 "https://veltrixbooks.com/subscribe",
                 "https://veltrixbooks.com/contact"

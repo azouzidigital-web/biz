@@ -1,6 +1,5 @@
 import { Navbar } from "@/components/landing/navbar";
 import { HeroSection } from "@/components/landing/hero-section";
-import { PricingSection } from "@/components/landing/pricing-section";
 import { FeaturesSection } from "@/components/landing/features-section";
 import { PopularContentSection } from "@/components/landing/popular-content-section";
 import { ReviewsSection } from "@/components/landing/reviews-section";
@@ -15,7 +14,6 @@ export default function Home() {
         <PopularContentSection />
         <FeaturesSection />
         <ReviewsSection />
-        <PricingSection />
       </main>
       <Footer />
     </div>

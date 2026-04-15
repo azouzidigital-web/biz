@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Facebook, Instagram, Twitter, BookOpen } from "lucide-react";
+import Image from "next/image";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -9,9 +9,15 @@ export function Footer() {
       <div className="container mx-auto px-4 py-12 md:px-6 md:py-16">
         <div className="grid gap-8 md:grid-cols-4">
           <div>
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <BookOpen className="h-7 w-7 text-primary" />
-              <span className="text-xl font-bold">Veltrix</span>
+            <Link href="/" className="mb-4 inline-flex items-center gap-2">
+              <Image
+                src="/Header-logo.png"
+                alt="Primecast"
+                width={240}
+                height={64}
+                className="h-11 w-auto"
+              />
+              <span className="text-xl font-bold tracking-tight text-foreground">Veltrix</span>
             </Link>
             <p className="text-sm text-muted-foreground max-w-xs">
               Best-selling business eBooks that explain concepts clearly and help you grow.

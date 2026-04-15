@@ -1,13 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { Menu, BookOpen } from "lucide-react";
+import Image from "next/image";
+import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTitle, SheetHeader, SheetTrigger } from "@/components/ui/sheet";
 import { useState } from "react";
 
 const navItems = [
 	{ label: "Home", href: "/" },
+	{ label: "Books", href: "/books" },
 	{ label: "About", href: "/#about" },
 	{ label: "FAQ", href: "/faq" },
 	{ label: "Contact", href: "/contact" },
@@ -55,11 +57,18 @@ export function Navbar() {
 			<div className="container mx-auto flex h-16 max-w-screen-xl items-center justify-between px-4 sm:px-6 lg:px-8">
 				<Link
 					href="/"
-					className="flex items-center gap-1.5 xs:gap-2"
+					className="flex items-center gap-2"
 					onClick={closeMobileMenu}
 				>
-					<BookOpen className="h-6 w-6 xs:h-7 xs:w-7 text-primary" />
-				<span className="text-lg xs:text-xl font-bold">Veltrix</span>
+					<Image
+						src="/Header-logo.png"
+						alt="Primecast"
+						width={240}
+						height={64}
+						priority
+						className="h-10 w-auto xs:h-11"
+					/>
+					<span className="text-lg font-bold tracking-tight text-foreground xs:text-xl">Veltrix</span>
 				</Link>
 
 				<nav className="hidden md:flex gap-6">
@@ -99,8 +108,15 @@ export function Navbar() {
 										className="flex items-center gap-2"
 										onClick={closeMobileMenu}
 									>
-										<BookOpen className="h-7 w-7 text-primary" />
-										<span className="text-xl font-bold">Business Explained</span>
+										<Image
+											src="/Header-logo.png"
+											alt="Primecast"
+											width={240}
+											height={64}
+											priority
+											className="h-11 w-auto"
+										/>
+										<span className="text-xl font-bold tracking-tight text-foreground">Veltrix</span>
 									</Link>
 								</div>
 								<nav className="px-6" aria-label="Main navigation">

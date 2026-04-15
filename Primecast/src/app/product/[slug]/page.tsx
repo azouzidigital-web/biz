@@ -11,9 +11,6 @@ const books = [
     image: "/images/books/top-tier-management.webp",
     images: [
       "/images/books/top-tier-management.webp",
-      "/images/books/top-tier-management-2.webp",
-      "/images/books/top-tier-management-3.webp",
-      "/images/books/top-tier-management-4.webp",
     ],
     price: 49,
     oldPrice: 99,
@@ -36,10 +33,12 @@ const books = [
     id: "organizational-management",
     title: "Organizational Management Explained",
     slug: "organizational-management",
-    image: "/images/books/organizational-management.webp",
+    image: "/images/books/organizational-mgm-1.webp",
     images: [
-      "/images/books/organizational-management.webp",
-      // Add more images here when available
+      "/images/books/organizational-mgm-1.webp",
+      "/images/books/organizational-mgm-2.webp",
+      "/images/books/organizational-mgm-3.webp",
+      "/images/books/organizational-mgm-4.webp",
     ],
     price: 49,
     oldPrice: 99,
@@ -62,9 +61,9 @@ const books = [
     id: "business-development",
     title: "Business Development Explained",
     slug: "business-development",
-    image: "/images/books/business-development.webp",
+    image: "/images/books/business-dev-1.webp",
     images: [
-      "/images/books/business-development.webp",
+      "/images/books/business-dev-1.webp",
       // Add more images here when available
     ],
     price: 49,
@@ -83,32 +82,6 @@ const books = [
     pages: 148,
     rating: 4.9,
     reviews: 367,
-  },
-  {
-    id: "marketing-frameworks",
-    title: "Marketing Frameworks Explained",
-    slug: "marketing-frameworks",
-    image: "/images/books/marketing-frameworks.webp",
-    images: [
-      "/images/books/marketing-frameworks.webp",
-      // Add more images here when available
-    ],
-    price: 49,
-    oldPrice: 99,
-    description: "Master proven marketing frameworks and methodologies. Learn digital marketing, brand positioning, customer acquisition, and retention strategies that drive real results.",
-    chapters: [
-      "Chapter 1: Marketing Fundamentals & Strategy",
-      "Chapter 2: Customer Persona Development",
-      "Chapter 3: Brand Positioning & Messaging",
-      "Chapter 4: Digital Marketing Essentials",
-      "Chapter 5: Content Marketing & SEO",
-      "Chapter 6: Social Media Strategy",
-      "Chapter 7: Analytics & Measurement",
-      "Chapter 8: Customer Retention & Loyalty"
-    ],
-    pages: 152,
-    rating: 4.8,
-    reviews: 315,
   },
   {
     id: "consulting-management",

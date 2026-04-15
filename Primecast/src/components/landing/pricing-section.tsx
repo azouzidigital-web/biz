@@ -61,20 +61,6 @@ const pricingPlans = [
     buttonLabel: "Buy Now",
     popular: false,
   },
-  {
-    id: "marketing-frameworks",
-    name: "Marketing Frameworks Explained",
-    price: "$49",
-    originalPrice: "$99",
-    savings: "$50",
-    features: [
-      "Proven marketing funnels",
-      "Positioning & messaging templates",
-      "Campaign planning worksheets"
-    ],
-    buttonLabel: "Buy Now",
-    popular: false,
-  },
 ];
 
 export function PricingSection() {
