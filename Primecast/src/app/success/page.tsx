@@ -4,11 +4,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { CheckCircle } from "lucide-react";
 
-export default function SuccessPage({
-  searchParams,
-}: {
-  searchParams: { session_id?: string };
-}) {
+export default function SuccessPage() {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -27,11 +23,6 @@ export default function SuccessPage({
             <p className="text-muted-foreground mb-8">
               A confirmation email has been sent to your email address with your download link and receipt.
             </p>
-            {searchParams.session_id && (
-              <p className="text-sm text-muted-foreground mb-8">
-                Session ID: {searchParams.session_id}
-              </p>
-            )}
             <div className="flex gap-4 justify-center">
               <Link href="/">
                 <Button className="bg-primary hover:bg-primary/90">
