@@ -75,6 +75,7 @@
     "rehype-autolink-headings": "^7.1.0",
     "rehype-slug": "^6.0.0",
     "remark-gfm": "^4.0.1",
+    "stripe": "^20.4.1",
     "sharp": "^0.34.2",
     "tailwind-merge": "^3.0.1",
     "tailwindcss-animate": "^1.0.7",
