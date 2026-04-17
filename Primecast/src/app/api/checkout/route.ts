@@ -15,8 +15,10 @@ export async function POST(request: NextRequest) {
     const stripe = new Stripe(stripeSecretKey);
     const { bookId, title, price } = await request.json();
 
-    // Prefer explicit APP URL, but fall back to the request origin for deployed environments.
-    const appUrl = process.env.NEXT_PUBLIC_APP_URL?.trim() || request.nextUrl.origin;
+    // Always prefer the production site URL for Stripe redirects.
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+    const appUrl = siteUrl || process.env.NEXT_PUBLIC_APP_URL?.trim() || request.nextUrl.origin;
+    const normalizedAppUrl = appUrl.replace(/\/$/, '');
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
@@ -37,8 +39,8 @@ export async function POST(request: NextRequest) {
         },
       ],
       mode: 'payment',
-      success_url: `${appUrl}/success?session_id={CHECKOUT_SESSION_ID}&book=${encodeURIComponent(bookId)}`,
-      cancel_url: `${appUrl}/product/${bookId}`,
+      success_url: `${normalizedAppUrl}/success?session_id={CHECKOUT_SESSION_ID}&book=${encodeURIComponent(bookId)}`,
+      cancel_url: `${normalizedAppUrl}/product/${bookId}`,
     });
 
     return NextResponse.json({ url: session.url });
