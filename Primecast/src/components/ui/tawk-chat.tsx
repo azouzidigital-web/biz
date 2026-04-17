@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect } from 'react';
-import Script from 'next/script';
 
 /**
  * TawkChat component that adds the Tawk.to live chat widget to the website.

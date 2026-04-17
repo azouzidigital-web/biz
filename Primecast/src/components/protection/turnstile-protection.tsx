@@ -10,6 +10,23 @@ interface TurnstileProtectionProps {
 export function TurnstileProtection({ children }: TurnstileProtectionProps) {
   const [isVerified, setIsVerified] = useState(false);
 
+  const isValidTurnstileSiteKey = (value?: string) => {
+    if (!value) return false;
+
+    const normalized = value.trim().toLowerCase();
+    if (!normalized) return false;
+
+    // Common placeholder values that trigger Turnstile runtime errors.
+    const looksLikePlaceholder =
+      normalized.includes('your') ||
+      normalized.includes('site key') ||
+      normalized.includes('sitekey') ||
+      normalized.includes('placeholder') ||
+      normalized.includes('example');
+
+    return !looksLikePlaceholder;
+  };
+
   // Temporary: Check if we should bypass Turnstile for testing
   const shouldBypass = typeof window !== 'undefined' && window.location.search.includes('bypass=true');
   
@@ -57,19 +74,11 @@ export function TurnstileProtection({ children }: TurnstileProtectionProps) {
   };
 
   const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+  const shouldEnableTurnstile = isValidTurnstileSiteKey(siteKey);
 
-  if (!siteKey) {
-    console.error('❌ NEXT_PUBLIC_TURNSTILE_SITE_KEY is not configured');
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-background">
-        <div className="text-center max-w-md mx-auto p-6">
-          <h1 className="text-2xl font-bold text-red-600 mb-2">Configuration Error</h1>
-          <p className="text-muted-foreground">
-            Bot protection is not properly configured. Please contact support.
-          </p>
-        </div>
-      </div>
-    );
+  if (!shouldEnableTurnstile) {
+    console.warn('⚠️ Turnstile disabled: NEXT_PUBLIC_TURNSTILE_SITE_KEY is missing or invalid.');
+    return <>{children}</>;
   }
 
   // Always render content with invisible Turnstile
