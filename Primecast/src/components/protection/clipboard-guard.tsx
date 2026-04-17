@@ -13,10 +13,10 @@ export const ClipboardGuard = () => {
     if (navigator.clipboard) {
       // Override clipboard write methods
       navigator.clipboard.writeText = async (text: string) => {
-        // Check if text contains channel names or sensitive data
-        const sensitivePatterns = ['TSN', 'CBC', 'CTV', 'Sportsnet', 'HBO', 'Netflix'];
+        // Check if text contains likely protected download or licensing content.
+        const sensitivePatterns = ['download link', 'license key', 'activation code', 'paid content'];
         const containsSensitive = sensitivePatterns.some(pattern => 
-          text.includes(pattern)
+          text.toLowerCase().includes(pattern)
         );
 
         if (containsSensitive) {

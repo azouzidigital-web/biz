@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /subscribe
 Disallow: /api/
 Disallow: /admin/
 Disallow: /_next/
@@ -25,11 +24,9 @@ Disallow: /
 # Allow good bots
 User-agent: Googlebot
 Allow: /
-Disallow: /subscribe
 
 User-agent: Bingbot
 Allow: /
-Disallow: /subscribe
 
 # Static sitemaps (primary - Google prefers these)
 Sitemap: https://veltrixbooks.com/sitemap.xml

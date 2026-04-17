@@ -1,10 +1,10 @@
 # Google Apps Script Form Integration
 
-This document explains how the form in the application integrates with Google Sheets using Google Apps Script.
+This document explains how a lead/contact form can integrate with Google Sheets using Google Apps Script.
 
 ## Overview
 
-The subscription form in the application (`/src/app/subscribe/page.tsx`) submits data to a Google Apps Script Web App, which then:
+The form in the application submits data to a Google Apps Script Web App, which then:
 
 1. Stores the data in a Google Sheet
 2. Sends an email notification when new submissions arrive
@@ -13,7 +13,7 @@ The subscription form in the application (`/src/app/subscribe/page.tsx`) submits
 
 ### Client-Side (Next.js)
 
-The form implementation in `/src/app/subscribe/page.tsx`:
+The form implementation in your selected page/component:
 
 1. Collects user information (name, email, plan selection)
 2. Uses utility functions from `/src/lib/google-script.ts` to submit data to the Google Apps Script Web App
@@ -45,9 +45,9 @@ const googleScriptUrl = 'https://script.google.com/macros/s/AKfycbz_t77GINGIcOOB
 
 The following data is sent to the Google Sheet:
 
-- **name**: The subscriber's name
-- **email**: The subscriber's email address
-- **plan**: The selected subscription plan
+- **name**: The contact's name
+- **email**: The contact's email address
+- **plan**: Optional selected plan/tier
 - **timestamp**: When the form was submitted
 
 ## Troubleshooting
@@ -70,7 +70,7 @@ function doPost(e) {
     
     // Open the Google Sheet
     const ss = SpreadsheetApp.openById('YOUR_SPREADSHEET_ID');
-    const sheet = ss.getSheetByName('Subscriptions');
+    const sheet = ss.getSheetByName('Leads');
     
     // Append row to spreadsheet
     sheet.appendRow([
@@ -83,12 +83,12 @@ function doPost(e) {
     // Send email notification
     MailApp.sendEmail({
       to: "your-email@example.com",
-      subject: "New Ebook Subscription: " + data.plan,
-      body: `New subscription received:
+      subject: "New Website Lead: " + (data.plan || 'General Inquiry'),
+      body: `New lead received:
       
 Name: ${data.name}
 Email: ${data.email}
-Plan: ${data.plan}
+Plan: ${data.plan || 'N/A'}
 Time: ${new Date().toString()}
       
 Check the spreadsheet for full details.`

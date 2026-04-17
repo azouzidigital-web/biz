@@ -219,7 +219,7 @@ node test-bot-simple.js
 node test-bot-advanced.js
 
 # Check if middleware blocks
-curl -H "User-Agent: bot/1.0" http://localhost:3000/subscribe
+curl -H "User-Agent: bot/1.0" http://localhost:3000/contact
 ```
 
 ### Manual Testing Checklist
