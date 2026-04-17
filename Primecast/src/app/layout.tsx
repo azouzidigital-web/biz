@@ -1,5 +1,4 @@
 import type {Metadata} from 'next';
-import { Inter } from 'next/font/google';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import { ViewportHeightAdjuster } from '@/hooks/use-viewport-height';
@@ -7,11 +6,6 @@ import { ChatGate } from '@/components/ui/chat-gate';
 import { ClientSideScripts } from '@/components/client-side-scripts';
 import FacebookConversions from '@/components/facebook-conversions';
 import { TurnstileProtection } from '@/components/protection/turnstile-protection';
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://veltrixbooks.com'),
@@ -87,7 +81,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body className="font-sans antialiased">
         <ViewportHeightAdjuster />
         <FacebookConversions />
         <TurnstileProtection>
