@@ -34,15 +34,4 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# Define success redirect for the subscription form
-[[redirects]]
-  from = "/subscribe/success"
-  to = "/subscribe?success=true"
-  status = 302
-
-# Add form submission redirect
-[[redirects]]
-  from = "/success"
-  to = "/subscribe?success=true"
-  status = 302
 
