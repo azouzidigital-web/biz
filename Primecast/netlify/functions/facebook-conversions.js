@@ -76,25 +76,33 @@ exports.handler = async (event, context) => {
     }
 
     if (!FACEBOOK_ACCESS_TOKEN) {
-      console.error('Facebook access token not configured');
+      console.warn('Facebook access token not configured; skipping conversion event');
       return {
-        statusCode: 500,
+        statusCode: 200,
         headers: {
           'Access-Control-Allow-Origin': '*',
         },
-        body: JSON.stringify({ error: 'Facebook access token not configured' })
+        body: JSON.stringify({
+          success: false,
+          skipped: true,
+          reason: 'facebook_access_token_not_configured'
+        })
       };
     }
 
     // Validate pixel ID format
     if (!/^\d{13,16}$/.test(FACEBOOK_PIXEL_ID)) {
-      console.error('Invalid Facebook Pixel ID format:', FACEBOOK_PIXEL_ID);
+      console.warn('Invalid Facebook Pixel ID format; skipping conversion event:', FACEBOOK_PIXEL_ID);
       return {
-        statusCode: 500,
+        statusCode: 200,
         headers: {
           'Access-Control-Allow-Origin': '*',
         },
-        body: JSON.stringify({ error: 'Invalid Facebook Pixel ID format' })
+        body: JSON.stringify({
+          success: false,
+          skipped: true,
+          reason: 'invalid_facebook_pixel_id'
+        })
       };
     }
 

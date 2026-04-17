@@ -28,10 +28,7 @@ const nextConfig: NextConfig = bundleAnalyzer({
   experimental: {
     optimizeCss: true
   },
-  // Enabling static export for Netlify deployment
-  output: 'export',
-  trailingSlash: true,
-  distDir: 'out',
+  // Keep server runtime enabled so App Router API routes (e.g. /api/checkout) work on Netlify.
   
   // Redirect all Netlify subdomain traffic to main domain
   async redirects() {
