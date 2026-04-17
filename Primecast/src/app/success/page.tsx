@@ -54,16 +54,16 @@ export default async function SuccessPage({
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      <main className="flex-1 flex items-center justify-center py-20">
+      <main className="flex-1 flex items-center justify-center py-12 md:py-20">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-2xl mx-auto text-center">
             <div className="mb-6 flex justify-center">
-              <CheckCircle className="h-24 w-24 text-green-500" />
+              <CheckCircle className="h-16 w-16 md:h-24 md:w-24 text-green-500" />
             </div>
-            <h1 className="text-4xl font-bold text-foreground mb-4">
+            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Payment Successful!
             </h1>
-            <p className="text-xl text-muted-foreground mb-4">
+            <p className="text-lg md:text-xl text-muted-foreground mb-4">
               Thank you for your purchase. Your eBook is ready.
             </p>
 
@@ -84,29 +84,29 @@ export default async function SuccessPage({
               </p>
             )}
 
-            <div className="flex gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center">
               {downloadUrl ? (
-                <Link href={downloadUrl} target="_blank" rel="noopener noreferrer">
-                  <Button className="bg-primary hover:bg-primary/90">
+                <Link href={downloadUrl} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                  <Button className="w-full sm:w-auto bg-primary hover:bg-primary/90">
                     Download eBook (Google Drive)
                   </Button>
                 </Link>
               ) : (
-                <Link href={fallbackProductUrl}>
-                  <Button className="bg-primary hover:bg-primary/90">
+                <Link href={fallbackProductUrl} className="w-full sm:w-auto">
+                  <Button className="w-full sm:w-auto bg-primary hover:bg-primary/90">
                     Go to Your eBook Page
                   </Button>
                 </Link>
               )}
 
-              <Link href={fallbackProductUrl}>
-                <Button variant="outline">
+              <Link href={fallbackProductUrl} className="w-full sm:w-auto">
+                <Button variant="outline" className="w-full sm:w-auto">
                   View Purchased eBook
                 </Button>
               </Link>
 
-              <Link href="/contact">
-                <Button variant="outline">
+              <Link href="/contact" className="w-full sm:w-auto">
+                <Button variant="outline" className="w-full sm:w-auto">
                   Contact Support
                 </Button>
               </Link>
