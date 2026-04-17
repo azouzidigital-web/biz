@@ -1,7 +1,8 @@
 [build]
-  command = "npm run build"
-  functions = "netlify/functions"
-  publish = ".next"
+  base = ".."
+  command = "cd Primecast && npm run build"
+  functions = "Primecast/netlify/functions"
+  publish = "Primecast/.next"
 
 [build.environment]
   NEXT_PUBLIC_SITE_URL = "https://veltrixbooks.com"
