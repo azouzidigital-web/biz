@@ -69,7 +69,6 @@ export default function RootLayout({
               "url": "https://veltrixbooks.com",
               "logo": "https://veltrixbooks.com/Header-logo.png",
               "sameAs": [
-                "https://veltrixbooks.com/subscribe",
                 "https://veltrixbooks.com/contact"
               ],
               "contactPoint": {
