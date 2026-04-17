@@ -1,6 +1,7 @@
 [build]
   command = "npm run build"
   functions = "netlify/functions"
+  publish = ".netlify/static"
 
 [build.environment]
   NEXT_PUBLIC_SITE_URL = "https://veltrixbooks.com"
