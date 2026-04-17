@@ -1,6 +1,3 @@
 # Redirect Netlify subdomain to main domain - prevents content access via subdomain
 https://primecast.netlify.app/* https://veltrixbooks.com/:splat 301!
 http://primecast.netlify.app/* https://veltrixbooks.com/:splat 301!
-
-# Catch-all 404 for any other missing pages
-/* /404.html 404
