@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useScrollToPlan } from "@/hooks/use-scroll-to-plan";
 import { useRef } from "react";
-import { BookOpen, Star, Users } from "lucide-react";
+import { BookOpen, Star, Users, Award } from "lucide-react";
 
 export function HeroSection() {
   const scrollToPlan = useScrollToPlan();
@@ -62,8 +62,8 @@ export function HeroSection() {
               Instant digital delivery
             </span>
             <span className="flex items-center gap-2">
-              <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
-              Trusted by professionals
+              <Award className="w-4 h-4 text-primary" />
+              Written by industry experts
             </span>
           </div>
 

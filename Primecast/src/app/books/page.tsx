@@ -19,7 +19,7 @@ const allBooks = [
     price: 49,
     oldPrice: 99,
     rating: 4.9,
-    reviews: 341,
+    reviews: 0,
     pages: 156,
   },
   {
@@ -30,7 +30,7 @@ const allBooks = [
     price: 49,
     oldPrice: 99,
     rating: 4.9,
-    reviews: 267,
+    reviews: 0,
     pages: 148,
   },
   {
@@ -41,7 +41,7 @@ const allBooks = [
     price: 49,
     oldPrice: 99,
     rating: 4.8,
-    reviews: 298,
+    reviews: 0,
     pages: 142,
   },
   {
@@ -52,7 +52,7 @@ const allBooks = [
     price: 49,
     oldPrice: 99,
     rating: 4.9,
-    reviews: 367,
+    reviews: 0,
     pages: 148,
   },
 ];
@@ -110,18 +110,10 @@ export default function BooksPage() {
                       {/* Content */}
                       <div className="flex flex-col flex-1 p-6">
 
-                        {/* Stars */}
-                        <div className="flex items-center gap-1.5 mb-3">
-                          {Array.from({ length: 5 }).map((_, i) => (
-                            <Star
-                              key={i}
-                              className={`w-4 h-4 ${i < Math.floor(book.rating) ? "fill-amber-400 text-amber-400" : "fill-muted text-muted"}`}
-                            />
-                          ))}
-                          <span className="text-xs text-muted-foreground ml-1">
-                            {book.rating} ({book.reviews})
-                          </span>
-                        </div>
+                        {/* Quality Badge */}
+                        <span className="inline-block text-xs font-semibold tracking-widest uppercase text-primary bg-primary/10 px-3 py-1 rounded-full mb-3 w-fit">
+                          Expert Guide
+                        </span>
 
                         <h2 className="text-lg font-bold text-foreground mb-1 leading-snug group-hover:text-primary transition-colors duration-200">
                           {book.title}
@@ -151,21 +143,7 @@ export default function BooksPage() {
               })}
             </div>
 
-            {/* Trust Bar */}
-            <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 text-sm text-muted-foreground">
-              <span className="flex items-center gap-2">
-                <Zap className="w-4 h-4 text-primary" />
-                Instant digital delivery
-              </span>
-              <span className="flex items-center gap-2">
-                <Shield className="w-4 h-4 text-primary" />
-                Secure checkout
-              </span>
-              <span className="flex items-center gap-2">
-                <Star className="w-4 h-4 text-primary fill-primary" />
-                4.8+ average rating
-              </span>
-            </div>
+
 
           </div>
         </section>

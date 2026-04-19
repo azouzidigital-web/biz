@@ -134,22 +134,10 @@ export default function ProductDetail({ book }: { book: Book }) {
                 {book.title}
               </h1>
 
-              {/* Rating */}
-              <div className="flex items-center gap-3 mb-6">
-                <div className="flex items-center gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className={`h-5 w-5 ${
-                        i < Math.floor(book.rating)
-                          ? "fill-yellow-400 text-yellow-400"
-                          : "text-gray-300"
-                      }`}
-                    />
-                  ))}
-                </div>
-                <span className="text-sm text-muted-foreground">
-                  {book.rating} ({book.reviews} reviews)
+              {/* Quality Badge */}
+              <div className="mb-6">
+                <span className="inline-block text-xs font-semibold tracking-widest uppercase text-primary bg-primary/10 px-4 py-1.5 rounded-full">
+                  Expert-Written Guide
                 </span>
               </div>
 

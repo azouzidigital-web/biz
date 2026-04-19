@@ -2,7 +2,6 @@ import { Navbar } from "@/components/landing/navbar";
 import { HeroSection } from "@/components/landing/hero-section";
 import { FeaturesSection } from "@/components/landing/features-section";
 import { PopularContentSection } from "@/components/landing/popular-content-section";
-import { ReviewsSection } from "@/components/landing/reviews-section";
 import { Footer } from "@/components/landing/footer";
 
 export default function Home() {
@@ -13,7 +12,6 @@ export default function Home() {
         <HeroSection />
         <PopularContentSection />
         <FeaturesSection />
-        <ReviewsSection />
       </main>
       <Footer />
     </div>

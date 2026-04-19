@@ -47,7 +47,7 @@ export function Footer() {
         
         <div className="mt-12 border-t pt-8 text-center">
           <p className="text-sm text-muted-foreground">
-            &copy; {currentYear} Veltrix. All rights reserved.
+            &copy; {currentYear} Veltrix Digital LLC. All rights reserved.
           </p>
           <div className="mt-4 flex justify-center gap-4">
             <Link href="/legal/privacy-policy" className="text-sm text-muted-foreground hover:text-primary">Privacy Policy</Link>
