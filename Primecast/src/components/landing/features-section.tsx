@@ -46,7 +46,7 @@ const features: Feature[] = [
 
 export function FeaturesSection() {
   return (
-    <section id="about" className="w-full py-16 md:py-24 lg:py-28 bg-gradient-to-b from-background to-secondary">
+    <section id="about" className="w-full py-12 md:py-16 lg:py-20 bg-gradient-to-b from-background to-secondary">
       <div className="container mx-auto px-4 md:px-6">
 
         {/* Header */}

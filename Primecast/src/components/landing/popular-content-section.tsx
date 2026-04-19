@@ -56,7 +56,7 @@ export function PopularContentSection() {
   return (
     <section
       id="popular-content"
-      className="w-full py-16 md:py-24 lg:py-28 bg-gradient-to-b from-secondary/30 to-background"
+      className="w-full py-12 md:py-16 lg:py-20 bg-gradient-to-b from-secondary/30 to-background"
       aria-label="Best-selling collection"
     >
       <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-6xl">
