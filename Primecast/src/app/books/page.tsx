@@ -65,7 +65,7 @@ export default function BooksPage() {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-1">
-        <section className="w-full py-16 md:py-24 bg-gradient-to-b from-secondary/30 to-background">
+        <section className="w-full py-16 md:py-24 lg:py-28 bg-gradient-to-b from-secondary/30 to-background">
           <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-6xl">
 
             {/* Header */}

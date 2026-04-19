@@ -16,7 +16,7 @@ export function HeroSection() {
   };
 
   return (
-    <section id="home" className="w-full py-14 md:py-20 lg:py-28 bg-gradient-to-b from-background to-secondary">
+    <section id="home" className="w-full py-16 md:py-24 lg:py-28 bg-gradient-to-b from-background to-secondary">
       <div className="container mx-auto px-4 md:px-6 text-center">
         <div className="max-w-3xl mx-auto">
 
