@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { CheckCircle } from "lucide-react";
 import Stripe from "stripe";
+import { PurchaseTracker } from "@/components/purchase-tracker";
 
 const EBOOK_DOWNLOAD_LINKS: Record<string, string | undefined> = {
   "top-tier-management": process.env.NEXT_PUBLIC_EBOOK_LINK_TOP_TIER,
@@ -17,6 +18,13 @@ const EBOOK_TITLES: Record<string, string> = {
   "organizational-management": "Organizational Management Explained",
   "business-development": "Business Development Explained",
   "consulting-management": "Consulting Management Explained",
+};
+
+const BOOK_PRICES: Record<string, number> = {
+  "top-tier-management": 49,
+  "organizational-management": 49,
+  "business-development": 49,
+  "consulting-management": 49,
 };
 
 async function resolvePurchasedBookId(sessionId?: string, fallbackBookId?: string) {
@@ -48,12 +56,14 @@ export default async function SuccessPage({
   const { session_id: sessionId, book: bookFromUrl } = await searchParams;
   const purchasedBookId = await resolvePurchasedBookId(sessionId, bookFromUrl);
   const bookTitle = purchasedBookId ? EBOOK_TITLES[purchasedBookId] : undefined;
+  const bookPrice = purchasedBookId ? BOOK_PRICES[purchasedBookId] : 49;
   const downloadUrl = purchasedBookId ? EBOOK_DOWNLOAD_LINKS[purchasedBookId] : undefined;
   const fallbackProductUrl = purchasedBookId ? `/product/${purchasedBookId}` : "/books";
 
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
+      {purchasedBookId && <PurchaseTracker bookId={purchasedBookId} bookTitle={bookTitle || 'eBook'} price={bookPrice} />}
       <main className="flex-1 flex items-center justify-center py-12 md:py-20">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-2xl mx-auto text-center">

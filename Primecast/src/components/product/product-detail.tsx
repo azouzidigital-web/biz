@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Star, Check, ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { trackViewContent, trackInitiateCheckout } from "@/lib/facebook-pixel-events";
 
 interface Book {
   id: string;
@@ -25,6 +26,15 @@ export default function ProductDetail({ book }: { book: Book }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
 
+  // Track product view
+  useEffect(() => {
+    trackViewContent({
+      id: book.id,
+      title: book.title,
+      price: book.price,
+    });
+  }, [book.id, book.title, book.price]);
+
   const nextImage = () => {
     setCurrentImageIndex((prev) => (prev + 1) % book.images.length);
   };
@@ -39,6 +49,14 @@ export default function ProductDetail({ book }: { book: Book }) {
 
   const handleCheckout = async () => {
     setIsLoading(true);
+    
+    // Track checkout initiation
+    trackInitiateCheckout({
+      id: book.id,
+      title: book.title,
+      price: book.price,
+    });
+    
     try {
       const response = await fetch('/api/checkout', {
         method: 'POST',
