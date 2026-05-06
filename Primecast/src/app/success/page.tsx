@@ -73,16 +73,9 @@ export default async function SuccessPage({
               </p>
             )}
 
-            {downloadUrl ? (
-              <p className="text-muted-foreground mb-8">
-                Click below to download your PDF now.
-              </p>
-            ) : (
-              <p className="text-muted-foreground mb-8">
-                Your payment was received. If your direct Google Drive link is not configured yet,
-                use the book page below and contact support for instant delivery.
-              </p>
-            )}
+            <p className="text-muted-foreground mb-8">
+              Click below to download your PDF now.
+            </p>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center">
               {downloadUrl ? (
