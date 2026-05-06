@@ -41,15 +41,26 @@ export function trackInitiateCheckout(product: ProductData) {
  * Track when a user completes a purchase
  */
 export function trackPurchase(product: ProductData) {
-  if (typeof window !== 'undefined' && (window as any).fbq) {
-    (window as any).fbq('track', 'Purchase', {
-      content_name: product.title,
-      content_type: 'product',
-      content_ids: [product.id],
-      value: product.price,
-      currency: product.currency || 'USD',
-    });
-  }
+  if (typeof window === 'undefined') return;
+  
+  // Wait for fbq to be available (max 5 attempts, 500ms each)
+  const checkAndTrack = (attempts: number = 0) => {
+    if ((window as any).fbq) {
+      (window as any).fbq('track', 'Purchase', {
+        content_name: product.title,
+        content_type: 'product',
+        content_ids: [product.id],
+        value: product.price,
+        currency: product.currency || 'USD',
+      });
+    } else if (attempts < 5) {
+      setTimeout(() => checkAndTrack(attempts + 1), 500);
+    } else {
+      console.warn('Facebook pixel not available for purchase tracking');
+    }
+  };
+  
+  checkAndTrack();
 }
 
 /**
