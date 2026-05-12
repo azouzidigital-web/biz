@@ -15,6 +15,7 @@ interface Book {
   images: string[];
   price: number;
   oldPrice: number;
+  comingSoon?: boolean;
   description: string;
   chapters: string[];
   pages: number;
@@ -192,15 +193,25 @@ export default function ProductDetail({ book }: { book: Book }) {
                 </span>
               </div>
 
-              {/* Buy Button */}
-              <Button
-                onClick={handleCheckout}
-                disabled={isLoading}
-                size="lg"
-                className="w-full mb-4 bg-primary hover:bg-primary/90 text-primary-foreground text-lg font-semibold py-6"
-              >
-                {isLoading ? 'Processing...' : `Buy Now - $${book.price}`}
-              </Button>
+              {/* Buy Button or Coming Soon */}
+              {book.comingSoon ? (
+                <Button
+                  disabled
+                  size="lg"
+                  className="w-full mb-4 bg-gray-400 hover:bg-gray-400 text-white text-lg font-semibold py-6 cursor-not-allowed"
+                >
+                  Coming Soon
+                </Button>
+              ) : (
+                <Button
+                  onClick={handleCheckout}
+                  disabled={isLoading}
+                  size="lg"
+                  className="w-full mb-4 bg-primary hover:bg-primary/90 text-primary-foreground text-lg font-semibold py-6"
+                >
+                  {isLoading ? 'Processing...' : `Buy Now - $${book.price}`}
+                </Button>
+              )}
 
               {/* Benefits */}
               <div className="space-y-3 text-sm">

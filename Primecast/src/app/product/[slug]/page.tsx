@@ -14,6 +14,7 @@ const books = [
     ],
     price: 49,
     oldPrice: 99,
+    comingSoon: true,
     description: "Master the principles of executive management and lead with confidence. This comprehensive guide covers strategic decision-making, team leadership, executive communication, and building high-performance organizations.",
     chapters: [
       "Chapter 1: The Foundation of Executive Leadership",
@@ -42,6 +43,7 @@ const books = [
     ],
     price: 49,
     oldPrice: 99,
+    comingSoon: true,
     description: "Learn to design, structure, and manage organizations for maximum efficiency and growth. Perfect for managers and organizational leaders seeking to improve operations and team dynamics.",
     chapters: [
       "Chapter 1: Organizational Design Principles",
@@ -68,6 +70,7 @@ const books = [
     ],
     price: 49,
     oldPrice: 99,
+    comingSoon: true,
     description: "Develop strategies for sustainable business growth. This eBook covers market analysis, partnership development, sales strategies, and scaling operations in competitive markets.",
     chapters: [
       "Chapter 1: Sales Fundamentals",

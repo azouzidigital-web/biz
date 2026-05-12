@@ -21,6 +21,7 @@ const allBooks = [
     rating: 4.9,
     reviews: 0,
     pages: 156,
+    comingSoon: true,
   },
   {
     id: "consulting-management",
@@ -43,6 +44,7 @@ const allBooks = [
     rating: 4.8,
     reviews: 0,
     pages: 142,
+    comingSoon: true,
   },
   {
     id: "business-development",
@@ -54,6 +56,7 @@ const allBooks = [
     rating: 4.9,
     reviews: 0,
     pages: 148,
+    comingSoon: true,
   },
 ];
 
@@ -130,11 +133,12 @@ export default function BooksPage() {
                         </div>
 
                         <button
-                          className="w-full h-12 flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold text-sm rounded-xl transition-all duration-300 shadow hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary/50"
+                          className="w-full h-12 flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold text-sm rounded-xl transition-all duration-300 shadow hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary/50 disabled:bg-gray-400 disabled:hover:bg-gray-400 disabled:cursor-not-allowed"
                           aria-label={`Buy ${book.title} for $${book.price}`}
+                          disabled={book.comingSoon}
                         >
                           <ShoppingCart className="w-4 h-4" />
-                          Get Instant Access
+                          {book.comingSoon ? 'Coming Soon' : 'Get Instant Access'}
                         </button>
                       </div>
                     </article>
